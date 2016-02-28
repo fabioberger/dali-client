@@ -1,0 +1,6 @@
+TODO:
+
+- Design redux store schema
+- Add actions and actionCreator to fetch items from server & tests
+- Write redux reducer & tests
+- Build react components
