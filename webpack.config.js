@@ -2,18 +2,22 @@ var webpack = require("webpack");
 var path = require('path');
 
 module.exports = {
-    entry: ['babel-polyfill', './public/js/entry.js'],
+    entry: ['./js/app.js'],
     output: {
-        path: path.join(__dirname, '/public/built'),
+        path: path.join(__dirname, '/public'),
         filename: 'bundle.js',
     },
     resolve: {
-        root: [path.join(__dirname, '/public/js')],
+        root: [path.join(__dirname, '/js')],
         extensions: ['', '.js', '.jsx']
     },
     module: {
         preLoaders: [
-            {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+            {
+                test: /\.js$/,
+                loader: "eslint-loader",
+                exclude: /node_modules/
+            }
         ],
         loaders: [
             {
@@ -26,7 +30,8 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                loader: 'style!css!less'
+                loader: 'style!css!less',
+                exclude: /node_modules/
             },
         ],
     },
