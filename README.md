@@ -21,4 +21,5 @@ Dali
 
 ## Run a Specific Test
 
+`cd ./tests`
 `webpack ./redux/thunks/items_thunks.test.js --target node; mocha built/bundle.js`
