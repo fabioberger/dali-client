@@ -8,10 +8,13 @@ module.exports = {
         filename: 'bundle.js',
     },
     resolve: {
-        root: [path.join(__dirname, '/public/js'), path.join(__dirname, '/tests')],
+        root: [path.join(__dirname, '/public/js')],
         extensions: ['', '.js', '.jsx']
     },
     module: {
+        preLoaders: [
+            {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+        ],
         loaders: [
             {
                 test: /\.jsx?$/,
