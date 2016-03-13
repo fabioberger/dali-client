@@ -5,7 +5,6 @@ var App = React.createClass({
         children: React.PropTypes.element,
     },
     render() {
-        console.log('yolo');
         return (
             <div className="app">
                 <h1>Dali</h1>
