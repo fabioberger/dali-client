@@ -12,3 +12,13 @@ Dali
 # Start Dev Server
 
 `webpack-dev-server --content-base public --watch`
+
+# Running Tests
+
+## Run All Tests
+
+`webpack --target node; mocha built/bundle.js`
+
+## Run a Specific Test
+
+`webpack ./redux/thunks/items_thunks.test.js --target node; mocha built/bundle.js`
