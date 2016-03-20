@@ -1,17 +1,17 @@
-var scopedFetch = require('redux/scoped_fetch');
-var fetchMock = require('fetch-mock');
-var configureMockStore = require('redux-mock-store');
-var thunkMiddleware = require('redux-thunk');
-var itemsThunks = require('redux/thunks/items_thunks');
-var ItemsActionTypes = require('redux/actions/items_action_types');
-var initialState = require('redux/initial_states/initial_state');
+const scopedFetch = require('redux/scoped_fetch');
+const fetchMock = require('fetch-mock');
+const configureMockStore = require('redux-mock-store');
+const thunkMiddleware = require('redux-thunk');
+const itemsThunks = require('redux/thunks/items_thunks');
+const ItemsActionTypes = require('redux/actions/items_action_types');
+const initialState = require('redux/initial_states/initial_state');
 
 fetchMock.useNonGlobalFetch(scopedFetch);
 
 const middlewares = [thunkMiddleware];
 const mockStore = configureMockStore(middlewares);
 
-var items = [
+const items = [
     {
         'id': 1,
         'created_date': '2016-02-01T00:00:00Z',

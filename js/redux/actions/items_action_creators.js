@@ -1,7 +1,7 @@
-var itemsActionTypes = require('redux/actions/items_action_types');
+const itemsActionTypes = require('redux/actions/items_action_types');
 
 // Actions follow the Flux Standard Action Spec (https://github.com/acdlite/flux-standard-action)
-var itemsActionCreators = {
+const itemsActionCreators = {
     requestItems: () => {
         return {
             type: itemsActionTypes.FETCH_ITEMS,

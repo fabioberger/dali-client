@@ -1,6 +1,6 @@
 import React from 'react';
 
-var App = React.createClass({
+const App = React.createClass({
     propTypes: {
         children: React.PropTypes.element,
     },

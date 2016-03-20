@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Gallery = React.createClass({
+const Gallery = React.createClass({
     _renderItem: function(item) {
         return (
             <div className="item">

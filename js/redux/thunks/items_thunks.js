@@ -1,11 +1,11 @@
-var itemsActionCreators = require('redux/actions/items_action_creators');
-var requestor = require('redux/requestor');
+const itemsActionCreators = require('redux/actions/items_action_creators');
+const requestor = require('redux/requestor');
 
-var itemsThunks = {
+const itemsThunks = {
     fetchItems: () => {
         return async dispatch => {
             dispatch(itemsActionCreators.requestItems());
-            var response = await requestor.getRequestAsync('/items');
+            const response = await requestor.getRequestAsync('/items');
             if (response.error) {
                 dispatch(itemsActionCreators.requestItemsFailed(response.error));
             } else {
