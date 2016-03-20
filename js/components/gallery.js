@@ -11,6 +11,15 @@ const Gallery = React.createClass({
             })
         ).isRequired,
     },
+    componentDidMount() {
+        const oneHourInMiliseconds = 3600000;
+        setInterval(this._showNextItem, oneHourInMiliseconds);
+    },
+    getInitialState() {
+        return {
+            displayedItemIndex: 0,
+        };
+    },
     _renderItem(item) {
         return (
             <div className="item">
@@ -22,10 +31,16 @@ const Gallery = React.createClass({
             </div>
         );
     },
+    _showNextItem() {
+        const nextDisplatedItemIndex = this.state.displayedItemIndex !== this.props.items.length - 1 ? this.state.displayedItemIndex + 1 : 0;
+        this.setState({
+            displayedItemIndex: nextDisplatedItemIndex,
+        });
+    },
     render() {
         return (
             <div className="gallery">
-                {this._renderItem(this.props.items[0])}
+                {this._renderItem(this.props.items[this.state.displayedItemIndex])}
             </div>
         );
     },
