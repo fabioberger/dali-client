@@ -1,6 +1,6 @@
-var R = require('ramda');
+const R = require('ramda');
 
-var Utils = {
+const Utils = {
     keywords: (keywordNames) => {
         return R.zipObj(keywordNames, keywordNames);
     },

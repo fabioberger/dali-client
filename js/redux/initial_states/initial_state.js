@@ -1,6 +1,6 @@
-var itemsInitialState = require('redux/initial_states/items_initial_state');
+const itemsInitialState = require('redux/initial_states/items_initial_state');
 
-var initialState = {
+const initialState = {
     items: itemsInitialState,
 };
 

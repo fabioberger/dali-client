@@ -1,7 +1,7 @@
-var itemsInitialState = require('redux/initial_states/items_initial_state');
-var itemsActionTypes = require('redux/actions/items_action_types');
+const itemsInitialState = require('redux/initial_states/items_initial_state');
+const itemsActionTypes = require('redux/actions/items_action_types');
 
-var itemsReducer = (state = itemsInitialState, action) => {
+const itemsReducer = (state = itemsInitialState, action) => {
     switch (action.type) {
         case itemsActionTypes.FETCH_ITEMS:
             return Object.assign({}, state, {

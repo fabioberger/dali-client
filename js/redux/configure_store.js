@@ -1,8 +1,8 @@
-var rootReducer = require('redux/reducers/root_reducer');
-var redux = require('redux');
-var thunkMiddleware = require('redux-thunk');
+const rootReducer = require('redux/reducers/root_reducer');
+const redux = require('redux');
+const thunkMiddleware = require('redux-thunk');
 
-var configureStore = initialState => {
+const configureStore = initialState => {
     return redux.createStore(
         rootReducer,
         initialState,

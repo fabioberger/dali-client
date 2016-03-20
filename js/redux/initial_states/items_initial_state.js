@@ -1,4 +1,4 @@
-var itemsInitialState = {
+const itemsInitialState = {
     isFetching: false,
     items: [],
 };
