@@ -11,7 +11,7 @@ const Gallery = React.createClass({
             })
         ).isRequired,
     },
-    _renderItem: function(item) {
+    _renderItem(item) {
         return (
             <div className="item">
                 <img className="image" title={item.name} src={item.url_image} />
@@ -22,7 +22,7 @@ const Gallery = React.createClass({
             </div>
         );
     },
-    render: function() {
+    render() {
         return (
             <div className="gallery">
                 {this._renderItem(this.props.items[0])}
