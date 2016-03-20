@@ -1,5 +1,5 @@
-var webpack = require("webpack");
 var path = require('path');
+var webpack = require("webpack");
 
 module.exports = {
     entry: ['babel-polyfill', path.join(__dirname, '/entry.js')],

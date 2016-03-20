@@ -1,7 +1,8 @@
-const scopedFetch = require('redux/scoped_fetch');
 const fetchMock = require('fetch-mock');
-const configureMockStore = require('redux-mock-store');
 const thunkMiddleware = require('redux-thunk');
+const configureMockStore = require('redux-mock-store');
+
+const scopedFetch = require('redux/scoped_fetch');
 const itemsThunks = require('redux/thunks/items_thunks');
 const ItemsActionTypes = require('redux/actions/items_action_types');
 const initialState = require('redux/initial_states/initial_state');
