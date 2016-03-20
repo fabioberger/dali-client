@@ -23,10 +23,11 @@ describe('Items Reducer', () => {
         done();
     });
 
-    it('should return the same state if an error was thrown (FETCH_ITEMS_SUCCEEDED)', done => {
+    it('should update the items in the store when fetch succeeded (FETCH_ITEMS_SUCCEEDED)', done => {
         let currentState = utils.cloneDeep(initialState);
         currentState.items.isFetching = true;
-        const expectedState = initialState;
+        let expectedState = initialState;
+        expectedState.items.items = [];
         assert(R.equals(reducer(expectedState, {
             type: itemsActionTypes.FETCH_ITEMS_SUCCEEDED,
             payload: [],
