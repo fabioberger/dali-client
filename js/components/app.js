@@ -7,7 +7,6 @@ var App = React.createClass({
     render() {
         return (
             <div className="app">
-                <h1>Dali</h1>
                 {this.props.children}
             </div>
         );
