@@ -17,6 +17,8 @@ Dali
 
 ## Run All Tests
 
+`cd ./tests`
+
 `webpack --target node; mocha built/bundle.js`
 
 ## Run a Specific Test
