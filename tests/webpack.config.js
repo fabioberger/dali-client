@@ -1,0 +1,38 @@
+var path = require('path');
+var webpack = require("webpack");
+
+module.exports = {
+    entry: ['babel-polyfill', path.join(__dirname, '/entry.js')],
+    output: {
+        path: path.join(__dirname, '/built'),
+        filename: 'bundle.js',
+    },
+    resolve: {
+        root: [path.join(__dirname, '/../js'), path.join(__dirname)],
+        extensions: ['', '.js', '.jsx']
+    },
+    module: {
+        preLoaders: [
+            {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+        ],
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ["es2015", "stage-2", "react"],
+                }
+            },
+            { test: /\.json$/, loader: 'json'},
+        ],
+    },
+    plugins: [
+        // Workaround to getting fetch to work with webpack
+        new webpack.ProvidePlugin({
+            'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+        }),
+        // This line suppresses a warning related to the `encoding` node_module
+        new webpack.NormalModuleReplacementPlugin(/\/iconv-loader$/, 'node-noop')
+    ]
+};
